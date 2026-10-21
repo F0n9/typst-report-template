@@ -48,6 +48,7 @@
   )
 
   show heading.where(level: 1): it => {
+    pagebreak(weak: true)
     v(0.6em)
     if it.numbering != none {
       let nums = counter(heading).at(it.location())
