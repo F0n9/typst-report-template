@@ -17,7 +17,7 @@
   date: "",
   logo: none,
   border: none,
-  has_toc: false,
+  has_toc: true,
   body
 ) = {
   // Page setup
