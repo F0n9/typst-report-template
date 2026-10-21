@@ -92,6 +92,15 @@ All report parameters are centralized in `metadata.typ`. You do not need to modi
 
 ---
 
+
+---
+
+## Preview
+
+<p align="center">
+  <img src="assets/preview.png" width="550" alt="Sample Template Preview" />
+</p>
+
 ## License
 
 This project is licensed under the [MIT License](LICENSE).
