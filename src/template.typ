@@ -17,6 +17,7 @@
   date: "",
   logo: none,
   border: none,
+  has_toc: false,
   body
 ) = {
   // Page setup
@@ -47,31 +48,30 @@
   )
 
   show heading.where(level: 1): it => {
-    pagebreak(weak: true)
-    v(0.2em)
+    v(0.6em)
     if it.numbering != none {
       let nums = counter(heading).at(it.location())
       let s = nums.map(str).join(".")
-      text(fill: title_color, font: body_font, size: 20pt)[
+      text(fill: title_color, font: body_font, size: 18pt)[
         #s #h(0.1em)
         #box(width: 1.2pt, height: 1.1em, fill: title_color.darken(30%), baseline: 20%)
         #h(0.2em)
         #it.body
       ]
     } else {
-      text(fill: title_color, font: body_font, size: 20pt)[
+      text(fill: title_color, font: body_font, size: 18pt)[
         #it.body
       ]
     }
-    v(0.8em)
+    v(0.6em)
   }
 
   show heading.where(level: 2): it => [
-    #text(font: body_font, size: 16pt, fill: title_color,)[#it]
+    #text(font: body_font, size: 14pt, fill: title_color,)[#it]
   ]
 
   show heading.where(level: 3): it => [
-    #text(font: body_font, fill: title_color,)[#it] #v(0.5em)
+    #text(font: body_font, fill: title_color,)[#it] #v(0.4em)
   ]
   
   show heading.where(level: 3): set heading(outlined: false)
@@ -144,7 +144,7 @@
 
   pagebreak()
 
-  // Table of Contents
+  // Bắt đầu tính số trang từ trang nội dung đầu tiên
   counter(page).update(1)
   
   let hf-style(body) = text(fill: rgb("#677CA6"), size: 10pt, body)
@@ -162,13 +162,16 @@
     chic-offset(14pt),
   )
 
-  show outline.entry.where(level: 1): it => {
-    v(12pt, weak: true)
-    strong(text(fill: title_color, it))
-  }
+  // Mục lục (Tùy chọn, mặc định không bật cho báo cáo môn học ngắn)
+  if has_toc {
+    show outline.entry.where(level: 1): it => {
+      v(12pt, weak: true)
+      strong(text(fill: title_color, it))
+    }
 
-  outline(title: align(center)[Mục lục], depth: 3, indent: auto)
-  pagebreak()
+    outline(title: align(center)[Mục lục], depth: 3, indent: auto)
+    pagebreak()
+  }
 
   body
 }
