@@ -7,7 +7,6 @@
 
 A clean, modular, and publication-ready academic report template built with [Typst](https://typst.app). Designed for coursework, technical reports, and term projects at VNU-HCM University of Science (HCMUS) and extensible for any academic institution.
 
----
 
 ## Features
 
@@ -17,7 +16,6 @@ A clean, modular, and publication-ready academic report template built with [Typ
 - **Header, Footer and Outline:** Automated page numbering, section header tracking via `chic-hdr`, and custom-aligned table of contents.
 - **Syntax Highlighting:** Styled code blocks with line numbering and container styling.
 
----
 
 ## Directory Structure
 
@@ -39,7 +37,6 @@ Report_Template_Typst/
 └── LICENSE                 # MIT License
 ```
 
----
 
 ## Getting Started
 
@@ -72,7 +69,6 @@ typst compile main.typ
 typst watch main.typ
 ```
 
----
 
 ## Configuration
 
@@ -90,10 +86,7 @@ All report parameters are centralized in `metadata.typ`. You do not need to modi
 #let instructor_name = "Instructor Name"
 ```
 
----
 
-
----
 
 ## Preview
 
