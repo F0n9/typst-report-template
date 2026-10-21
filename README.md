@@ -7,26 +7,25 @@
 
 A clean, modular, and publication-ready academic report template built with [Typst](https://typst.app). Designed for coursework, technical reports, and term projects at VNU-HCM University of Science (HCMUS) and extensible for any academic institution.
 
-
 ## Features
 
-- **Decoupled Architecture:** Strict separation between document metadata (`metadata.typ`), formatting rules (`src/`), and chapter contents (`content/`).
+- **Centralized Metadata:** Strict decoupling of report metadata (`metadata.typ`), formatting rules (`src/`), and chapter contents (`content/`).
 - **Standardized Typography:** Optimized for Vietnamese typography and complex mathematical typesetting with Times New Roman and Consolas font pairings.
-- **Customizable Cover Page:** Pre-configured cover border, institutional logo, course metadata, and author attribution block.
+- **Customizable Cover Page:** Full-page border frame, institutional branding, clear hierarchical title blocks, and boxed student credentials.
 - **Header, Footer and Outline:** Automated page numbering, section header tracking via `chic-hdr`, and custom-aligned table of contents.
 - **Syntax Highlighting:** Styled code blocks with line numbering and container styling.
-
 
 ## Directory Structure
 
 ```text
-Report_Template_Typst/
+typst-report-template/
 ├── assets/
 │   ├── border.png          # Cover page border asset
-│   └── logo.png            # Institutional logo
+│   ├── logo.png            # Institutional logo
+│   └── preview.png         # Template sample preview
 ├── content/
-│   ├── 01_intro.typ        # Sample introduction chapter
-│   └── 02_summary.typ      # Sample summary chapter
+│   ├── 01_intro.typ        # Introduction chapter
+│   └── 02_summary.typ      # Summary, math, and data tables
 ├── src/
 │   ├── template.typ        # Core layout engine, cover page, headers/footers
 │   └── theme.typ           # Palette, fonts, and codeblock styling
@@ -36,7 +35,6 @@ Report_Template_Typst/
 ├── .gitignore
 └── LICENSE                 # MIT License
 ```
-
 
 ## Getting Started
 
@@ -69,29 +67,35 @@ typst compile main.typ
 typst watch main.typ
 ```
 
-
 ## Configuration
 
 All report parameters are centralized in `metadata.typ`. You do not need to modify formatting files to customize your document:
 
 ```typst
-#let project_title = "SUBJECT / PROJECT TITLE"
-#let project_subtitle = "Detailed Topic or Assignment Name"
-#let university = "VIETNAM NATIONAL UNIVERSITY - HO CHI MINH CITY\nUNIVERSITY OF SCIENCE"
-#let faculty = "FACULTY OF INFORMATION TECHNOLOGY"
-#let course = "Course Name"
-#let author_name = "Tien Dang"
-#let author_id = "24120149"
-#let author_email = "12092k6@gmail.com"
-#let instructor_name = "Instructor Name"
+// Report Information
+#let university = "ĐẠI HỌC QUỐC GIA THÀNH PHỐ HỒ CHÍ MINH \n TRƯỜNG ĐẠI HỌC KHOA HỌC TỰ NHIÊN"
+#let faculty = "KHOA CÔNG NGHỆ THÔNG TIN"
+#let department = "[Tên Bộ Môn / Chuyên Ngành]"
+#let course = "[Tên Học Phần / Môn Học]"
+
+#let project_title = "BÁO CÁO MÔN HỌC"
+#let project_subtitle = "[Tên Đề Tài Báo Cáo]"
+
+// Student and Instructor Information
+#let class_name = "[Lớp sinh hoạt / Mã lớp]"
+#let author_name = "[Họ và tên sinh viên]"
+#let author_id = "[Mã số sinh viên]"
+#let author_email = "[Địa chỉ email]"
+#let instructor_name = "[Họ và tên Giảng viên hướng dẫn]"
+
+// Submission Details
+#let submission_date = "Thành phố Hồ Chí Minh, ngày [..] tháng [..] năm [..]"
 ```
-
-
 
 ## Preview
 
 <p align="center">
-  <img src="assets/preview.png" width="550" alt="Sample Template Preview" />
+  <img src="assets/preview.png" width="700" alt="Sample Template Preview" />
 </p>
 
 ## License
