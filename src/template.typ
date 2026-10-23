@@ -20,7 +20,6 @@
   has_toc: true,
   body
 ) = {
-  // Page setup
   set page(
     paper: "a4",
     margin: (x: 2.5cm, y: 2.5cm),
@@ -41,7 +40,6 @@
 
   set list(indent: 1.5em)
 
-  // Numbering
   set heading(
     numbering: "1.1",
     supplement: [Mục],
@@ -77,11 +75,9 @@
   
   show heading.where(level: 3): set heading(outlined: false)
 
-  // Math setup
   set math.equation(numbering: "(1.1)")
   show: equate.with(breakable: true, sub-numbering: true)
 
-  // Figure caption
   show figure.caption: it => [
     #set text(size: 10pt, fill: soft_color)
     #strong[#it.supplement #it.counter.display(it.numbering)]
@@ -90,7 +86,6 @@
   ]
   show figure.where(kind: table): set figure.caption(position: top)
 
-  // Cover Page
   if border != none {
     place(top + left, dx: -1.5cm, dy: -1.5cm)[
       #image(border, width: 100% + 3cm, height: 100% + 3cm, fit: "stretch")
@@ -145,7 +140,6 @@
 
   pagebreak()
 
-  // Bắt đầu tính số trang từ trang nội dung đầu tiên
   counter(page).update(1)
   
   let hf-style(body) = text(fill: rgb("#677CA6"), size: 10pt, body)
@@ -163,7 +157,6 @@
     chic-offset(14pt),
   )
 
-  // Mục lục (Tùy chọn, mặc định không bật cho báo cáo môn học ngắn)
   if has_toc {
     show outline.entry.where(level: 1): it => {
       v(12pt, weak: true)

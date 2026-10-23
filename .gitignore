@@ -1,11 +1,7 @@
-# Typst output
 *.pdf
 !main.pdf
-
-# Operating system files
 .DS_Store
 Thumbs.db
-
-# Backup files
 *.bak
 *~
+.agents/

@@ -16,9 +16,8 @@
   date: submission_date,
   logo: "../assets/logo.png",
   border: "../assets/border.png",
-  has_toc: true, // Đặt true nếu báo cáo dài trên 5 trang cần Mục lục riêng
+  has_toc: true,
 )
 
-// Nội dung báo cáo bắt đầu từ đây (Bắt đầu từ Trang 1 / 1)
 #include "content/01_intro.typ"
 #include "content/02_summary.typ"

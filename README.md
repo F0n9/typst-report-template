@@ -20,20 +20,20 @@ A clean, modular, and publication-ready academic report template built with [Typ
 ```text
 typst-report-template/
 ├── assets/
-│   ├── border.png          # Cover page border asset
-│   ├── logo.png            # Institutional logo
-│   └── preview.png         # Template sample preview
+│   ├── border.png
+│   ├── logo.png
+│   └── preview.png
 ├── content/
-│   ├── 01_intro.typ        # Introduction chapter
-│   └── 02_summary.typ      # Summary, math, and data tables
+│   ├── 01_intro.typ
+│   └── 02_summary.typ
 ├── src/
-│   ├── template.typ        # Core layout engine, cover page, headers/footers
-│   └── theme.typ           # Palette, fonts, and codeblock styling
-├── metadata.typ            # Centralized project and author metadata
-├── main.typ                # Document entry point
-├── main.pdf                # Pre-compiled sample output
+│   ├── template.typ
+│   └── theme.typ
+├── metadata.typ
+├── main.typ
+├── main.pdf
 ├── .gitignore
-└── LICENSE                 # MIT License
+└── LICENSE
 ```
 
 ## Getting Started
@@ -43,13 +43,8 @@ typst-report-template/
 Install the Typst compiler via your preferred package manager:
 
 ```bash
-# Windows (Winget)
 winget install --id Typst.Typst
-
-# macOS (Homebrew)
 brew install typst
-
-# Linux (Cargo)
 cargo install --locked typst-cli
 ```
 
@@ -60,10 +55,7 @@ cargo install --locked typst-cli
 Compile the report into a PDF:
 
 ```bash
-# Single compilation
 typst compile main.typ
-
-# Live watch mode (auto-recompiles on save)
 typst watch main.typ
 ```
 
@@ -72,7 +64,6 @@ typst watch main.typ
 All report parameters are centralized in `metadata.typ`. You do not need to modify formatting files to customize your document:
 
 ```typst
-// Report Information
 #let university = "ĐẠI HỌC QUỐC GIA THÀNH PHỐ HỒ CHÍ MINH \n TRƯỜNG ĐẠI HỌC KHOA HỌC TỰ NHIÊN"
 #let faculty = "KHOA CÔNG NGHỆ THÔNG TIN"
 #let department = "[Tên Bộ Môn / Chuyên Ngành]"
@@ -81,14 +72,12 @@ All report parameters are centralized in `metadata.typ`. You do not need to modi
 #let project_title = "BÁO CÁO MÔN HỌC"
 #let project_subtitle = "[Tên Đề Tài Báo Cáo]"
 
-// Student and Instructor Information
 #let class_name = "[Lớp sinh hoạt / Mã lớp]"
 #let author_name = "[Họ và tên sinh viên]"
 #let author_id = "[Mã số sinh viên]"
 #let author_email = "[Địa chỉ email]"
 #let instructor_name = "[Họ và tên Giảng viên hướng dẫn]"
 
-// Submission Details
 #let submission_date = "Thành phố Hồ Chí Minh, ngày [..] tháng [..] năm [..]"
 ```
 

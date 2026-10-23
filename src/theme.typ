@@ -1,4 +1,3 @@
-// report theme
 #let title_color = rgb("#1E3778")
 #let body_color = rgb("#111111")
 #let soft_color = rgb("#666666")
@@ -6,7 +5,6 @@
 #let body_font = "Times New Roman"
 #let mono_font = "Consolas"
 
-// code block helper
 #let codeblock(lines) = block(
   width: 100%,
   fill: rgb("#F7F7F7"),
